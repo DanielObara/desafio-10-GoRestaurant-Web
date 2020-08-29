@@ -5,8 +5,20 @@ interface IFoodPlateProps {
 }
 
 export const Container = styled.div<IFoodPlateProps>`
-  background: #f0f0f5;
+  background: #222;
   border-radius: 8px;
+
+  transition: transform 0.2s linear;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  @media (max-width: 885px) {
+    margin-bottom: 20px;
+  }
 
   header {
     background: #ffb84d;
@@ -25,6 +37,8 @@ export const Container = styled.div<IFoodPlateProps>`
     img {
       pointer-events: none;
       user-select: none;
+      width: auto;
+      height: auto;
     }
   }
 
@@ -32,11 +46,11 @@ export const Container = styled.div<IFoodPlateProps>`
     padding: 30px;
 
     h2 {
-      color: #3d3d4d;
+      color: #ddd;
     }
 
     p {
-      color: #3d3d4d;
+      color: #aaa;
 
       margin-top: 16px;
     }
@@ -59,14 +73,18 @@ export const Container = styled.div<IFoodPlateProps>`
     align-items: center;
 
     padding: 20px 30px;
-    background: #e4e4eb;
+    @media (max-width: 1047px) {
+      padding: 20px 20px;
+      margin-bottom: auto;
+    }
+    background: #303030;
     border-radius: 0px 0px 8px 8px;
 
     div.icon-container {
       display: flex;
 
       button {
-        background: #fff;
+        background: #444;
         padding: 10px;
         border-radius: 8px;
         display: flex;
@@ -74,7 +92,7 @@ export const Container = styled.div<IFoodPlateProps>`
         transition: 0.1s;
 
         svg {
-          color: #3d3d4d;
+          color: #eee;
         }
 
         & + button {
@@ -88,7 +106,11 @@ export const Container = styled.div<IFoodPlateProps>`
       align-items: center;
 
       p {
-        color: #3d3d4d;
+        color: #ccc;
+
+        @media (max-width: 1178px) {
+          display: none;
+        }
       }
 
       .switch {
